@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joris Ambeyi — Frontend Developer, Nairobi</title>
+<meta name="description" content="Joris Ambeyi (Joe) is a freelance frontend developer based in Nairobi, Kenya, building production web apps with React, Next.js, and Node.js. Student at Dandora Secondary School, technician for the Student Council, and contributor to FIKRA Innovation Organisation.">
+<meta name="author" content="Joris Ambeyi">
+<link rel="canonical" href="https://jorisambeyi.netlify.app/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Joris Ambeyi — Frontend Developer, Nairobi">
+<meta property="og:description" content="Freelance frontend developer in Nairobi, Kenya. React, Next.js, TypeScript, Node.js. Builder of real, shipped software.">
+<meta property="og:url" content="https://jorisambeyi.netlify.app/">
+
+<!-- Structured data: tells Google this page IS the canonical Joris Ambeyi -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Joris Ambeyi",
+  "alternateName": ["Joe Ambeyi", "Joe"],
+  "url": "https://jorisambeyi.netlify.app/",
+  "image": "https://jorisambeyi.netlify.app/joris-ambeyi.png",
+  "jobTitle": "Freelance Frontend Developer",
+  "description": "Freelance frontend developer based in Nairobi, Kenya, building production web applications, organizational platforms, and full-stack tools since 2023.",
+  "email": "mailto:jorisambeyi32@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Nairobi",
+    "addressCountry": "KE"
+  },
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "Dandora Secondary School"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Alphendale Secondary School"
+    }
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "FIKRA Innovation Organisation",
+    "url": "https://fikra.org"
+  },
+  "knowsAbout": ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Node.js", "REST APIs", "Frontend Development"],
+  "sameAs": [
+    "https://github.com/joe12-joe",
+    "https://www.linkedin.com/in/jorisambeyi-57b9bb403",
+    "https://x.com/jorisjoejj"
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #0D1117;
+    --bg-raised: #161B22;
+    --bg-inset: #10151C;
+    --border: #262C36;
+    --text: #E6E6DC;
+    --text-dim: #8B93A0;
+    --text-faint: #565E6C;
+    --teal: #3DDC97;
+    --gold: #E8A33D;
+    --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Consolas, monospace;
+    --sans: 'Inter', -apple-system, system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--teal); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Hero: terminal window ---------- */
+  .hero {
+    padding: 80px 0 56px;
+  }
+
+  .hero-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    margin-bottom: 28px;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 133px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .hero-intro {
+    padding-top: 6px;
+  }
+
+  .hero-intro .kicker {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-faint);
+    margin: 0 0 6px;
+  }
+
+  .hero-intro p {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin: 0;
+    max-width: 40ch;
+  }
+
+  .term {
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px -20px rgba(0,0,0,0.6);
+  }
+
+  .term-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: var(--bg-inset);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .term-dot {
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--text-faint);
+  }
+
+  .term-title {
+    margin-left: 8px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-faint);
+  }
+
+  .term-body {
+    padding: 24px 22px 28px;
+    font-family: var(--mono);
+    font-size: 14px;
+  }
+
+  .term-line {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  .prompt { color: var(--teal); flex-shrink: 0; }
+  .cmd { color: var(--text); }
+
+  .term-output {
+    margin: 10px 0 22px;
+    padding-left: 20px;
+    color: var(--text-dim);
+  }
+
+  .term-output .name {
+    color: var(--text);
+    font-size: 26px;
+    font-family: var(--sans);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .term-output .role {
+    color: var(--gold);
+  }
+
+  .caret {
+    display: inline-block;
+    width: 8px; height: 16px;
+    background: var(--teal);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: blink 1.1s steps(1) infinite;
+  }
+
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* ---------- Sections ---------- */
+  section {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .label {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-faint);
+    margin: 0 0 18px;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin: 0 0 16px;
+    font-weight: 700;
+  }
+
+  p.body-text {
+    max-width: 62ch;
+    color: var(--text-dim);
+    font-size: 16px;
+  }
+
+  /* ---------- Stack: package.json style ---------- */
+  .pkg {
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 22px;
+    font-family: var(--mono);
+    font-size: 13.5px;
+    overflow-x: auto;
+  }
+
+  .pkg .punc { color: var(--text-faint); }
+  .pkg .key { color: var(--gold); }
+  .pkg .val { color: var(--teal); }
+  .pkg-row { padding-left: 20px; }
+
+  /* ---------- Projects: file listing style ---------- */
+  .listing {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .entry {
+    display: block;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-raised);
+    transition: background 120ms ease;
+  }
+
+  .entry:last-child { border-bottom: none; }
+  .entry:hover { background: #1B2230; text-decoration: none; }
+
+  .entry-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+
+  .entry-name {
+    font-family: var(--mono);
+    font-size: 15px;
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .entry-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--bg);
+    background: var(--teal);
+    padding: 2px 7px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .entry-tag.gold { background: var(--gold); }
+
+  .entry-desc {
+    color: var(--text-dim);
+    font-size: 14.5px;
+    margin: 0;
+  }
+
+  .entry-stack {
+    margin-top: 8px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--text-faint);
+  }
+
+  /* ---------- Contact ---------- */
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-family: var(--mono);
+    font-size: 14px;
+  }
+
+  .contact-links a::before {
+    content: "› ";
+    color: var(--text-faint);
+  }
+
+  footer {
+    padding: 32px 0 60px;
+    color: var(--text-faint);
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .caret { animation: none; opacity: 1; }
+  }
+
+  @media (max-width: 520px) {
+    .hero { padding: 48px 0 40px; }
+    .hero-top { gap: 18px; }
+    .avatar { width: 78px; height: 104px; }
+    .term-output .name { font-size: 22px; }
+    .entry-top { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="hero-top">
+      <img class="avatar" src="joris-ambeyi.png" alt="Joris Ambeyi">
+      <div class="hero-intro">
+        <p class="kicker">Nairobi, Kenya</p>
+        <p>Freelance frontend developer building production web apps and full-stack tools.</p>
+      </div>
+    </div>
+    <div class="term">
+      <div class="term-bar">
+        <span class="term-dot"></span>
+        <span class="term-dot"></span>
+        <span class="term-dot"></span>
+        <span class="term-title">joris@nairobi ~</span>
+      </div>
+      <div class="term-body">
+        <div class="term-line"><span class="prompt">$</span><span class="cmd">whoami</span></div>
+        <div class="term-output">
+          <span class="name">Joris Ambeyi</span>
+          <span class="role">Freelance Frontend Developer</span> · Nairobi, Kenya
+        </div>
+        <div class="term-line"><span class="prompt">$</span><span class="cmd">cat about.md<span class="caret"></span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <p class="label">// about</p>
+    <h2>Three years in, still shipping</h2>
+    <p class="body-text">
+      I build real, working software — not demos. Since 2023 I've worked freelance as a
+      frontend developer: turning UI/UX designs into pixel-accurate, responsive pages, wiring
+      up REST APIs with backend teams, and optimizing for performance and cross-device
+      compatibility. Alongside that, I'm studying Computer Software Engineering at
+      <a href="#projects">Dandora Secondary School</a>, where I also run the projector and tech
+      setup for the Student Council, and contribute to
+      <a href="#projects">FIKRA Innovation Organisation</a>. Whatever I build, it ships:
+      deployable, documented, and usable on day one.
+    </p>
+  </section>
+
+  <section id="stack">
+    <p class="label">// stack</p>
+    <h2>package.json</h2>
+    <div class="pkg">
+      <div>{</div>
+      <div class="pkg-row"><span class="key">"languages"</span><span class="punc">:</span> [<span class="val">"JavaScript (ES6+)"</span>, <span class="val">"TypeScript"</span>, <span class="val">"HTML5"</span>, <span class="val">"CSS3"</span>],</div>
+      <div class="pkg-row"><span class="key">"frameworks"</span><span class="punc">:</span> [<span class="val">"React.js"</span>, <span class="val">"Next.js"</span>, <span class="val">"Tailwind CSS"</span>, <span class="val">"Bootstrap"</span>],</div>
+      <div class="pkg-row"><span class="key">"tooling"</span><span class="punc">:</span> [<span class="val">"Git"</span>, <span class="val">"GitHub"</span>, <span class="val">"REST APIs"</span>],</div>
+      <div class="pkg-row"><span class="key">"alsoWorksWith"</span><span class="punc">:</span> [<span class="val">"Node.js"</span>, <span class="val">"Express"</span>, <span class="val">"MongoDB"</span>, <span class="val">"Supabase"</span>]</div>
+      <div>}</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <p class="label">// projects — ls -la</p>
+    <h2>Shipped work</h2>
+    <div class="listing">
+
+      <a class="entry" href="https://github.com/joe12-joe?tab=repositories">
+        <div class="entry-top">
+          <span class="entry-name">fikra-website/</span>
+          <span class="entry-tag gold">org build</span>
+        </div>
+        <p class="entry-desc">Production website and full organizational documentation set — constitution, 2026–2028 strategic plan, org chart, staff handbook — for FIKRA Innovation Organisation, a Nairobi nonprofit.</p>
+        <div class="entry-stack">Node.js · Express · MongoDB · SVG brand system</div>
+      </a>
+
+      <a class="entry" href="https://github.com/joe12-joe?tab=repositories">
+        <div class="entry-top">
+          <span class="entry-name">homiva/</span>
+          <span class="entry-tag">full-stack</span>
+        </div>
+        <p class="entry-desc">Full web presence for HOMIVA, a Nairobi house cleaning and laundry company — customer-facing site, admin dashboard, and SMS alerts for bookings.</p>
+        <div class="entry-stack">Node.js · Express · Supabase · Twilio · Netlify · Render</div>
+      </a>
+
+      <a class="entry" href="https://github.com/joe12-joe?tab=repositories">
+        <div class="entry-top">
+          <span class="entry-name">jarvis/</span>
+          <span class="entry-tag">personal AI</span>
+        </div>
+        <p class="entry-desc">A 7-phase personal AI assistant: web dashboard, voice I/O, smart-home control, desktop and mobile shells, and a documented path to production deployment.</p>
+        <div class="entry-stack">Next.js · TypeScript · Tailwind · Tauri · Expo</div>
+      </a>
+
+      <a class="entry" href="https://github.com/joe12-joe/efootball">
+        <div class="entry-top">
+          <span class="entry-name">efootball/</span>
+          <span class="entry-tag">full-stack</span>
+        </div>
+        <p class="entry-desc">A full tournament management platform for the eFootball community — organizer roster entry, automatic fixture generation (round robin, single/double elimination, Swiss), live standings, bracket visualization, and player profiles with career statistics.</p>
+        <div class="entry-stack">Next.js 16 · Prisma · PostgreSQL · Auth.js · Tailwind CSS v4 · Zod · Vitest</div>
+      </a>
+
+      <a class="entry" href="https://github.com/joe12-joe?tab=repositories">
+        <div class="entry-top">
+          <span class="entry-name">naomi-portfolio/</span>
+          <span class="entry-tag">client site</span>
+        </div>
+        <p class="entry-desc">A music-themed personal portfolio for a client, with an auto-shuffling photo gallery and self-contained deployment.</p>
+        <div class="entry-stack">HTML · CSS · JavaScript</div>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <p class="label">// contact</p>
+    <h2>Get in touch</h2>
+    <div class="contact-links">
+      <a href="mailto:jorisambeyi32@gmail.com">email</a>
+      <a href="https://github.com/joe12-joe">github</a>
+      <a href="https://www.linkedin.com/in/jorisambeyi-57b9bb403">linkedin</a>
+      <a href="https://x.com/jorisjoejj">x / twitter</a>
+    </div>
+  </section>
+
+  <footer>
+    Joris Ambeyi · Nairobi, Kenya · built and maintained by hand
+  </footer>
+
+</div>
+
+</body>
+</html>
